@@ -1,0 +1,46 @@
+<div class="container py-4">
+
+  <!-- Başlık -->
+  <div class="mb-4 py-3 bg-primary text-white text-center rounded shadow">
+    <h2 class="m-0">🚀 Person Yönetim Paneli</h2>
+  </div>
+
+  <!-- Kişi Ekleme Formu -->
+  <div class="card shadow-sm mb-4">
+    <div class="card-body">
+      <h5 class="card-title text-center mb-3">➕ Yeni Kişi Ekle</h5>
+      <form #form="ngForm">
+        <input class="form-control mb-2" placeholder="Number" type="number" [(ngModel)]="personForm.number" name="number" required>
+        <input class="form-control mb-2" placeholder="Name" [(ngModel)]="personForm.name" name="name" required>
+        <input class="form-control mb-2" placeholder="Surname" [(ngModel)]="personForm.surname" name="surname" required>
+        <button class="btn btn-success w-100" (click)="savePerson()" [disabled]="!form.valid">Kaydet ✅</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Kişiler Listesi -->
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <h5 class="card-title text-center mb-3">📋 Kişiler Listesi</h5>
+      <table class="table table-bordered table-hover text-center">
+        <thead class="table-primary">
+          <tr>
+            <th>#️⃣ ID</th>
+            <th>🔢 Number</th>
+            <th>👤 Name</th>
+            <th>👤 Surname</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let person of persons">
+            <td>{{ person.id }}</td>
+            <td>{{ person.number }}</td>
+            <td>{{ person.name }}</td>
+            <td>{{ person.surname }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
