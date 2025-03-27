@@ -1,0 +1,24 @@
+<div class="card shadow-sm">
+    <div class="card-body">
+      <h5 class="card-title text-center">📋 Kullanıcılar Listesi</h5>
+      <table class="table table-bordered table-hover text-center">
+        <thead class="table-primary">
+          <tr>
+            <th>#️⃣ ID</th>
+            <th>🔢 Number</th>
+            <th>👤 Name</th>
+            <th>👤 Surname</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users">
+            <td>{{ user.id }}</td>
+            <td>{{ user.number }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.surname }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

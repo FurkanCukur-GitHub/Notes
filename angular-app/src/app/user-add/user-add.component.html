@@ -1,0 +1,12 @@
+<div class="card shadow-sm mb-4">
+    <div class="card-body">
+      <h5 class="card-title text-center">➕ Yeni Kullanıcı Ekle</h5>
+      <form #form="ngForm">
+        <input type="number" class="form-control my-2" placeholder="Number" [(ngModel)]="userForm.number" name="number" required>
+        <input type="text" class="form-control my-2" placeholder="Name" [(ngModel)]="userForm.name" name="name" required>
+        <input type="text" class="form-control my-2" placeholder="Surname" [(ngModel)]="userForm.surname" name="surname" required>
+        <button class="btn btn-success w-100 mt-3" (click)="saveUser()" [disabled]="!form.valid">Kaydet ✅</button>
+      </form>
+    </div>
+  </div>
+  
